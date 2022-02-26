@@ -1,3 +1,5 @@
+import javax.sound.midi.MidiSystem;
+
 import com.sun.corba.se.spi.orbutil.fsm.Input;
 
 public class StatTrack {
@@ -160,14 +162,62 @@ private Team team2;
 	System.out.println( "Enter Stat Type: "); //prompt
 	System.out.println(singleLine);
 	System.out.println();
-	
-	
+		
+	if ( type == 0) {
+		player.setFouls(player.getFouls()+1);
+		} else {
+			System.out.println(singleLine);
+			System.out.println("Select Attempt");
+			System.out.println(singleLine);
+			System.out.println("#0 = Missed Shot");
+			System.out.println("#1 = Made Shot");
+			System.out.println(singleLine);
+			made = Input.getIntRange( "Enter Attempt: "); // prompt low and high
+			System.out.println(singleLine);
+			
+			if(made == 0);
+		player.shotAttempt(type, made: false);
+		
+			else
+				player.shotAttempt(type, made: false);
+			System.out.println();
+			
+			}
 		
 	}
-	 
-	  
-	  
- }
+	
+	private void updateScoreboard() {
+		
+		team1.displayStats();
+		team2.displayStats();
+		
+	}
+	
+	private void dispayGameStatus() {
+		team1.getPlayer1().displayStats();
+		System.out.println();
+		
+		team1.getPlayer2().displayStats();
+		System.out.println();
+		
+		team2.getPlayer1().displayStats();
+		System.out.println();
+		
+		team2.getPlayer2().displayStats();
+		System.out.println();
+		
+	}
+	
+	public static void main(String[] args) {
+		StatTrack app = new StatTrack();
+		app.displayAppHeading();
+		app.teamSetUp();
+		app.playGame();
+		Input.sc.close();
+		
+	}
+	
+	 }
     
 
 
