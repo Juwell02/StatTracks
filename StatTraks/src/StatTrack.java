@@ -32,7 +32,7 @@ private Team team2;
 	 
 	 String userInput = null;
 	 
-	 userInput = Input.getLine( "Enter the #1 Team Name:  ");
+	 userInput = Input.getLine("Enter the #1 Team Name:  ");
 	team1.setName(userInput);
 	 playersSetup(team1);
 	 System.out.println();
@@ -93,7 +93,7 @@ private Team team2;
 	 
 	 
 	 System.out.println(singleLine);
-	 userInput = Input.getIntRange( "Menu Choice: " );
+	 userInput = Input.getIntRange( "Menu Choice: ", 0, 3);
 	 System.out.println(singleLine);
 	 
 	System.out.println();
@@ -120,7 +120,7 @@ private Team team2;
 	break;
 	
 	case 3:
-	displayGameStatus();
+		dispayGameStatus();
 	break;
 	
 	default: 
@@ -138,7 +138,7 @@ private Team team2;
 		System.out.println(singleLine);
 		team.listPlayers();
 		System.out.println(singleLine);
-		playerNum = Input.getIntRange( "Enter Player: ");
+		playerNum = Input.getIntRange( "Enter Player: ", 1, 2);
 		System.out.println(singleLine);
 		if(playerNum == 0)
 			updatePlayerStats(team.getPlayer1());
@@ -172,14 +172,13 @@ private Team team2;
 			System.out.println("#0 = Missed Shot");
 			System.out.println("#1 = Made Shot");
 			System.out.println(singleLine);
-			made = Input.getIntRange( "Enter Attempt: "); // prompt low and high
+			made = Input.getIntRange( "Enter Attempt: ",0, 1);
 			System.out.println(singleLine);
 			
-			if(made == 0);
-		player.shotAttempt(type, made: false);
-		
+			if(made == 0)
+		player.shotAttempt(type, false);
 			else
-				player.shotAttempt(type, made: false);
+				player.shotAttempt(type,  false);
 			System.out.println();
 			
 			}
