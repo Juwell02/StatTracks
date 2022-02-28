@@ -1,22 +1,36 @@
 
+/** Justin Wells
+*Stat Track App
+* 2/28/20202
+*/
+
+
+
 public class StatTrack {
  
 
 
 private Team team1;
+// team 1
 
 private Team team2;
+// team 2
 
-  private final static String doubleLine = "             ";
+  private final static String doubleLine = " ========================================";
+  // prints double line
   
-  private final static String singleLine = " 			 ";
+  private final static String singleLine = "------------------------------------------";
+  // prints single line
   
+  // constructor for both teams
  private StatTrack() {
 	 
 	 team1 = new Team();
 	 team2 = new Team();
  }
  
+ 
+ //displays the app header
  private void displayAppHeading() {
 	  
 	 System.out.println(doubleLine);
@@ -25,6 +39,7 @@ private Team team2;
 	 System.out.println();
  }
  
+ // starts the setting up the teams with the team names
  private void teamSetUp() {
 	 
 	 String userInput = null;
@@ -38,8 +53,10 @@ private Team team2;
 	 userInput = Input.getLine( "Enter the #2 Team Name");
 	team2.setName(userInput);
 	 playersSetup(team2);   
-	
+
  }
+ 
+ // starts setting the players up
  private void playersSetup(Team team) {
 	 String teamName = team.getName();
 	 String name = null;
@@ -66,6 +83,7 @@ private Team team2;
 	 team.setPlayer2(player2);
 	 
  }
+ // continues running the game
  
  private void playGame() {
 	 boolean playGame = true;
@@ -127,6 +145,8 @@ private Team team2;
 	 }
  }
 	
+ 
+ // updates the players stats 
 	private void updateTeamStats(Team team) {
 		int playerNum = 0;
 		
@@ -143,6 +163,7 @@ private Team team2;
 			updatePlayerStats(team.getPlayer2());
 		System.out.println();
 		}
+	// updates team stats
 	private void updatePlayerStats(Player player) {
 		int type = 0;
 		int made = 0;
@@ -160,6 +181,7 @@ private Team team2;
 	System.out.println(singleLine);
 	System.out.println();
 		
+	// determines shots made, fouls, and points scored.
 	if ( type == 0) {
 		player.setFouls(player.getFouls()+1);
 		} else {
@@ -182,13 +204,14 @@ private Team team2;
 		
 	}
 	
+	// updates the scoreboard
 	private void updateScoreboard() {
 		
 		team1.displayStats();
 		team2.displayStats();
 		
 	}
-	
+	// shows all stats
 	private void dispayGameStatus() {
 		team1.getPlayer1().displayStats();
 		System.out.println();
@@ -203,7 +226,12 @@ private Team team2;
 		System.out.println();
 		
 	}
+	// end of game
 	
+	
+	// main method that creates the app 
+	
+	// args no command line input used 
 	public static void main(String[] args) {
 		StatTrack app = new StatTrack();
 		app.displayAppHeading();

@@ -1,4 +1,6 @@
 public class Player {
+	
+	// creates what's needed to create team and score points
 private String name; 
 private String team;
 private int playerNumber;
@@ -15,24 +17,26 @@ public int fouls;
 
 
 
-
+// gets users team name
 
 public String getTeam() {return team;}
 
 
 public void setTeam(String teamName) {this.team = teamName;}
 
+
 public String getPlayerName() {
 	return name; 
 }
-
-
+// recieves and sets the users team names and player names and numbers
 public void setName(String name) { this.name = name;}
 
 public int getPlayerNumber() {return playerNumber;}
 
 public void setPlayerNumber (int playerNumber) { this.playerNumber = playerNumber;}
 
+
+// sets the shot types and attempts and determines what they are worth
 public void shotAttempt (int shotType, boolean made) {
 	switch(shotType) {
 	
@@ -77,6 +81,7 @@ public double getThreePointer() {
 	return fieldGoal_3Points;
 }	
 
+// prints when players scores and add the points scored to their score
 public void displayStats(){
 	
 	System.out.println("#" + playerNumber + " " + name + " Fouls = " + fouls + " points = " + totalPoints);
@@ -99,6 +104,9 @@ if(fieldGoal_3Points == 0) {
 else System.out.printf("3 point field goal" + "		"+ threePointAttempts +"			" + fieldGoal_3Points +"					%2f\n", (fieldGoal_3Points/threePointAttempts)* 100.0);	
 		
 }
+
+
+// keeps track of all fouls and points
 public int getFouls() {
 	return fouls;
 	
