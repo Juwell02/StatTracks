@@ -1,9 +1,6 @@
-import javax.sound.midi.MidiSystem;
-
-import com.sun.corba.se.spi.orbutil.fsm.Input;
 
 public class StatTrack {
-
+ 
 
 
 private Team team1;
@@ -50,7 +47,7 @@ private Team team2;
 	 
 	 System.out.println();
 	 name = Input.getLine( "Enter " + teamName + "'s #1 player's name: ");
-	 number = Input.getIntRange( "Enter " + name + " jersey number:" );
+	 number = Input.getIntRange( "Enter " + name + " jersey number:", 0, 99 );
 	 
 	 Player player1 = new Player();
 	 player1.setName(name);
@@ -61,7 +58,7 @@ private Team team2;
 	 System.out.println();
 	
 	name = Input.getLine( "Enter " + teamName + "'s #2 player's name:" );
-	 number = Input.getIntRange( "Enter " + name + " jersey number: ");
+	 number = Input.getIntRange( "Enter " + name + " jersey number: ", 0, 99);
 	 
 	 Player player2 = new Player();
 	 player2.setName(name);
