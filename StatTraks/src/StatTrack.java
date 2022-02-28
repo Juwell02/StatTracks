@@ -157,7 +157,7 @@ private Team team2;
 		System.out.println(singleLine);
 		playerNum = Input.getIntRange( "Enter Player: ", 1, 2);
 		System.out.println(singleLine);
-		if(playerNum == 0)
+		if(playerNum == 1)
 			updatePlayerStats(team.getPlayer1());
 		else 
 			updatePlayerStats(team.getPlayer2());
@@ -213,6 +213,7 @@ private Team team2;
 	}
 	// shows all stats
 	private void dispayGameStatus() {
+		
 		team1.getPlayer1().displayStats();
 		System.out.println();
 		
