@@ -197,7 +197,7 @@ private Team team2;
 			if(made == 0)
 		player.shotAttempt(type, false);
 			else
-				player.shotAttempt(type,  false);
+				player.shotAttempt(type,  true);
 			System.out.println();
 			
 			}
