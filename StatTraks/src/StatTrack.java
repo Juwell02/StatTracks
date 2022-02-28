@@ -133,7 +133,7 @@ private Team team2;
 	updateScoreboard();
 	System.out.println();
 	break;
-	
+	 
 	case 3:
 		dispayGameStatus();
 	break;
@@ -177,7 +177,7 @@ private Team team2;
 	System.out.println("2 = 2 points");
 	System.out.println("3 = 3 points");
 	System.out.println(singleLine);
-	System.out.println( "Enter Stat Type: "); //prompt
+	type = Input.getIntRange( "Enter Stat Type: ", 0, 3);
 	System.out.println(singleLine);
 	System.out.println();
 		
