@@ -111,7 +111,6 @@ public class Player {
 	public int getFouls() {
 		return fouls;
 
-// 
 	}
 	public void setFouls(int fouls) {
 		this.fouls = fouls;
